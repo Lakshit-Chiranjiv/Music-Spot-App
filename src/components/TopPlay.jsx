@@ -20,6 +20,17 @@ const TopPlay = () => {
 
   const divRef = useRef(null)
 
+  const topPlays = data?.slice(0,5)
+
+  const handlePauseClick = () => {
+    dispatch(playPause(false))
+  }
+
+  const handlePlayClick = () => {
+    dispatch(setActiveSong({song, data, i}))
+    dispatch(playPause(true))
+  }
+
   return (
     <div></div>
   )
