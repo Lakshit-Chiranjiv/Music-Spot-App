@@ -12,6 +12,14 @@ import { playPause, setActiveSong } from "../redux/features/playerSlice";
 
 const TopPlay = () => {
 
+  const dispatch = useDispatch()
+
+  const { isPlaying,activeSong } = useSelector((state) => state.player) 
+
+  const { data } = useGetTopChartsQuery()
+
+  const divRef = useRef(null)
+
   return (
     <div></div>
   )
