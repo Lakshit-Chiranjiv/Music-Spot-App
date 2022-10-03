@@ -20,14 +20,14 @@ const Sidebar = () => {
       <div className="md:hidden block absolute top-6 right-4">
         {
           mobileMenuOpen ? 
-          <RiCloseLine className="w-6 h-6 mr-2 text-white"/> :
-          <HiOutlineMenu className="w-6 h-6 mr-2 text-white"/>
+          <RiCloseLine className="w-6 h-6 mr-2 text-white" onClick={() => setMobileMenuOpen(false)}/> :
+          <HiOutlineMenu className="w-6 h-6 mr-2 text-white" onClick={() => setMobileMenuOpen(true)}/>
         }
       </div>
 
       <div className={`md:hidden absolute top-0 h-screen w-2/3 p-6 z-10 smooth-transition backdrop-blur-lg bg-gradient-to-tl from-white/10 to-[#483d8b] ${mobileMenuOpen ? 'left-0' : '-left-full'}`}>
         <img src={logo} alt="logo" className="w-full h-14 object-contain"/>
-        <NavLinks/>
+        <NavLinks handleClick={() => setMobileMenuOpen(false)}/>
       </div>
     </>
   )
