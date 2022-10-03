@@ -24,6 +24,11 @@ const Sidebar = () => {
           <HiOutlineMenu className="w-6 h-6 mr-2 text-white"/>
         }
       </div>
+
+      <div className={`md:hidden absolute top-0 h-screen w-2/3 p-6 z-10 smooth-transition backdrop-blur-lg bg-gradient-to-tl from-white/10 to-[#483d8b] ${mobileMenuOpen ? 'left-0' : '-left-full'}`}>
+        <img src={logo} alt="logo" className="w-full h-14 object-contain"/>
+        <NavLinks/>
+      </div>
     </>
   )
 };
