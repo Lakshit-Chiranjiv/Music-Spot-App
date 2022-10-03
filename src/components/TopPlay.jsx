@@ -20,6 +20,10 @@ const TopPlay = () => {
 
   const divRef = useRef(null)
 
+  useEffect(()=>{
+   divRef.current.scrollIntoView({ behavior: 'smooth' }) 
+  })
+
   const topPlays = data?.slice(0,5)
 
   const handlePauseClick = () => {
@@ -32,7 +36,14 @@ const TopPlay = () => {
   }
 
   return (
-    <div></div>
+    <div ref={divRef} className='xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:mx-w-[500px] max-w-full flex flex-col'>
+      <div className="flex flex-row justify-between items-center">
+        <h2 className="text-2xl text-white font-bold">Top Charts</h2>
+        <Link to='/top-charts'>
+          <p className="text-base text-gray-300 cursor-pointer">See more</p>
+        </Link>
+      </div>
+    </div>
   )
 };
 
