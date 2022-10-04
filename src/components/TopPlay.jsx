@@ -9,6 +9,7 @@ import 'swiper/css'
 import 'swiper/css/free-mode'
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
+import TopChartCard from "./TopChartCard";
 
 const TopPlay = () => {
 
@@ -42,6 +43,14 @@ const TopPlay = () => {
         <Link to='/top-charts'>
           <p className="text-base text-gray-300 cursor-pointer">See more</p>
         </Link>
+      </div>
+
+      <div className="mt-4 flex flex-col gap-1">
+        {
+          topPlays.map((topPlay,i) => (
+            <TopChartCard song={topPlay} i={i} key={topPlay.title}/>
+          ))
+        }
       </div>
     </div>
   )
