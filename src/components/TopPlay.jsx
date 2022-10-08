@@ -66,6 +66,27 @@ const TopPlay = () => {
             <p className="text-base text-gray-300 cursor-pointer">See more</p>
           </Link>
         </div>
+
+        <Swiper 
+          slidesPerView='auto'
+          spaceBetween={15}
+          freeMode
+          centeredSlides
+          centeredSlidesBounds
+          modules={[FreeMode]}
+          className='mt-4'
+        >
+          {
+            topPlays?.map((topPlay,i) => (
+              <SwiperSlide key={topPlay?.key} style={{ width: '25%', height: 'auto' }} className='shadow-lg rounded-full animate-slideright'>
+                <Link to={`/artists/${topPlay?.artists[0].adamid}`}>
+                  <img src={topPlay?.images.background} alt="artist image" className="rounded-full w-full"/>
+                </Link>
+              </SwiperSlide>
+            ))
+          }
+
+        </Swiper>
       </div>
     </div>
   )
