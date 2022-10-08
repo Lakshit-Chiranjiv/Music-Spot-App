@@ -37,7 +37,7 @@ const TopPlay = () => {
   }
 
   return (
-    <div ref={divRef} className='xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:mx-w-[500px] max-w-full flex flex-col'>
+    <div ref={divRef} className='xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:mx-w-[500px] lg:max-w-[400px] max-w-full flex flex-col'>
       <div className="flex flex-col w-full">
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-2xl text-white font-bold">Top Charts</h2>
