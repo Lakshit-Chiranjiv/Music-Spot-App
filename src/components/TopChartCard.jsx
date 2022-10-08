@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
+import PlayPause from "./PlayPause"
 
-const TopChartCard = ({song,i}) => {
+const TopChartCard = ({song,i,isPlaying,activeSong,handlePauseClick,handlePlayClick}) => {
   return (
     <div className="flex w-full items-center rounded-lg cursor-pointer mb-2 py-2 p-4 hover:bg-[#4c426e]">
         <h3 className="font-bold text-white text-base mr-3">{i+1}.</h3>
@@ -11,6 +12,7 @@ const TopChartCard = ({song,i}) => {
             <Link to={`/artists/${song?.artists[0].adamid}`} className='text-gray-400 text-base mt-2'>{song?.subtitle}</Link>
           </div>
         </div>
+        <PlayPause isPlaying={isPlaying} activeSong={activeSong} song={song} handlePause={handlePauseClick} handlePlay={handlePlayClick}/>
     </div>
   )
 }
