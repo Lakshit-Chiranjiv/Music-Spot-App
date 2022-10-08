@@ -31,7 +31,7 @@ const TopPlay = () => {
     dispatch(playPause(false))
   }
 
-  const handlePlayClick = () => {
+  const handlePlayClick = (song,i) => {
     dispatch(setActiveSong({song, data, i}))
     dispatch(playPause(true))
   }
@@ -51,7 +51,7 @@ const TopPlay = () => {
           <div className="mt-4 flex flex-col gap-1">
             {
               topPlays.map((topPlay,i) => (
-                <TopChartCard song={topPlay} i={i} key={topPlay.title} isPlaying={isPlaying} activeSong={activeSong} handlePauseClick={handlePauseClick} handlePlayClick={handlePlayClick}/>
+                <TopChartCard song={topPlay} i={i} key={topPlay.title} isPlaying={isPlaying} activeSong={activeSong} handlePauseClick={handlePauseClick} handlePlayClick={()=>handlePlayClick(topPlay,i)}/>
               ))
             }
           </div> :
