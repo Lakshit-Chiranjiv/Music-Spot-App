@@ -46,13 +46,17 @@ const TopPlay = () => {
           </Link>
         </div>
 
-        <div className="mt-4 flex flex-col gap-1">
-          {
-            topPlays.map((topPlay,i) => (
-              <TopChartCard song={topPlay} i={i} key={topPlay.title}/>
-            ))
-          }
-        </div>
+        {
+          topPlays ? 
+          <div className="mt-4 flex flex-col gap-1">
+            {
+              topPlays.map((topPlay,i) => (
+                <TopChartCard song={topPlay} i={i} key={topPlay.title}/>
+              ))
+            }
+          </div> :
+          <p>Loading...</p>
+        }
       </div>
 
       <div className="flex flex-col mt-8 w-full">
