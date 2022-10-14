@@ -2,11 +2,14 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import { DetailsHeader,Error,Loader } from "../components";
+import { useGetSongDetailsQuery } from "../redux/services/shazamCore.js";
 
 const SongDetails = () => {
     const { songid } = useParams()
     const dispatch = useDispatch()
     const { activeSong, isPlaying } = useSelector((state) => state.player)
+
+    const { data: songData, isFetching: isFetchingSongData } = useGetSongDetailsQuery({ songid })
 
     return (
         <div className="flex flex-col">
