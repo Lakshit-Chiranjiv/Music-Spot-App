@@ -6,7 +6,7 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
   
   return (
   <div className="relative flex flex-col w-full">
-    <div className="w-full sm:h-48 h-28 bg-gradient-to-l from-transparent to-black ">
+    <div className="w-full sm:h-48 h-28 bg-gradient-to-l from-transparent to-black "/>
       <div className="absolute flex items-center inset-0">
         <img src={artistId? artist?.artwork?.url.replace('{w}','500').replace('{h}','500'): songData?.images?.coverart} alt="song img" className="sm:w-48 w-28 sm:h-48 h-28 rounded-full border-2 object-cover shadow-xl shadow-black"/>
 
@@ -27,9 +27,9 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
             }
           </p>
         </div>
-
       </div>
-    </div>
+      
+      <div className="w-full sm:h-44 h-24"/>
   </div>
 )};
 
