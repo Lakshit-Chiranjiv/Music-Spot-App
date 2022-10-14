@@ -18,6 +18,14 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
               <p className="text-gray-400 text-base mt-2">{songData?.subtitle}</p>
             </Link>
           }
+
+          <p className="text-gray-400 text-base mt-2">
+            {
+              artistId ? 
+              artist?.genreNames[0] :
+              songData?.genres?.primary
+            }
+          </p>
         </div>
 
       </div>
