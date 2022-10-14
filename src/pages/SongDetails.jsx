@@ -23,9 +23,9 @@ const SongDetails = () => {
                     {
                         songData?.sections[1].type === 'LYRICS' ?
                         songData?.sections[1].text.map((line,i) => (
-                            <p>{line}</p>
+                            <p className="text-base text-gray-300 my-1">{line}</p>
                         )):
-                        <p>No Lyrics Available</p>
+                        <p className="text-base text-gray-300 my-1">No Lyrics Available</p>
                     }
                 </div>
             </div>
