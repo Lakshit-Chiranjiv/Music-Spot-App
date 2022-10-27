@@ -13,6 +13,15 @@ const SongDetails = () => {
 
     const { data, isFetching: isFetchingRelated, error } = useGetSongRelatedDetailsQuery({ songid })
 
+    const handlePauseClick = () => {
+        dispatch(playPause(false))
+    }
+    
+    const handlePlayClick = () => {
+        dispatch(setActiveSong({song, data, i}))
+        dispatch(playPause(true))
+    }
+
     if(isFetchingSongData || isFetchingRelated)
         return <Loader text='Fetching Song Details'/>
 
@@ -38,7 +47,13 @@ const SongDetails = () => {
                 </div>
             </div>
 
-            <RelatedSongs/>
+            <RelatedSongs
+                data={data}
+                isPlaying={isPlaying}
+                activeSong={activeSong}
+                handlePauseClick={handlePauseClick}
+                handlePlayClick={handlePlayClick}
+            />
         </div>
     )
 };
