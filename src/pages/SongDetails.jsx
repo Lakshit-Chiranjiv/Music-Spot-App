@@ -13,6 +13,12 @@ const SongDetails = () => {
 
     const { data, isFetching: isFetchingRelated, error } = useGetSongRelatedDetailsQuery({ songid })
 
+    if(isFetchingSongData || isFetchingRelated)
+        return <Loader text='Fetching Song Details'/>
+
+    if(error)
+        return <Error/>
+
     return (
         <div className="flex flex-col">
 
