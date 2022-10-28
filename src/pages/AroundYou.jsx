@@ -29,6 +29,12 @@ const AroundYou = () => {
         fetchCountry()
 
     }, [country])
+
+    if(isFetching && loading)
+        return <Loader text='Loading songs around you'/>
+
+    if(error && country)
+        return <Error/>
     
     return (
         <div>
