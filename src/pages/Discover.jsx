@@ -12,11 +12,12 @@ const Discover = () => {
 
     const { data, isFetching, error } = useGetSongsByGenreQuery(genreListId || 'POP')
 
-    const genreTitle = 'Pop'
-
+    
     if(isFetching) return <Loader text='Loading songs...'/>
-
+    
     if(error) return <Error/>
+    
+    const genreTitle = genres.find(({ value }) => value === genreListId)?.title
 
     return (
         <div className="flex flex-col">
