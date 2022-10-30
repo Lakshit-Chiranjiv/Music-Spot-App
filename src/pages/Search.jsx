@@ -14,7 +14,7 @@ const Search = () => {
     const songs = data?.tracks?.hits?.map((song) => song.track)
 
     if(isFetching)
-        return <Loader text='Loading Top Charts'/>
+        return <Loader text={`Searching ${searchSongName}`}/>
 
     if(error)
         return <Error/>
