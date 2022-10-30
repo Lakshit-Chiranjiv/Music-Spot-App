@@ -9,6 +9,8 @@ const TopCharts = () => {
 
     const { data, isFetching, error } = useGetTopChartsQuery()
 
+    const songData = data?.filter(song => song.images)
+
 
     if(isFetching)
         return <Loader text='Loading Top Charts'/>
@@ -24,14 +26,14 @@ const TopCharts = () => {
 
             <div className='flex flex-wrap sm:justify-start justify-center gap-8'>
                 {
-                    data?.map((song,i) => (
+                    songData?.map((song,i) => (
                         <SongCard
                             key={song.key}
                             i={i}
                             song={song}
                             isPlaying={isPlaying}
                             activeSong={activeSong}
-                            data={data}
+                            data={songData}
                         />
                     ))
                 }
