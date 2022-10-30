@@ -9,7 +9,7 @@ const ArtistDetails = () => {
 
     const { data: artistData, isFetching: isFetchingArtistData, error } = useGetArtistDetailsQuery(artistId)
 
-
+    
     if(isFetchingArtistData)
         return <Loader text='Fetching Artist Details'/>
 
