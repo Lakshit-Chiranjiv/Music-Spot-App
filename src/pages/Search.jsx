@@ -11,7 +11,9 @@ const Search = () => {
 
     const { data, isFetching, error } = useGetSongsBySearchQuery(searchSongName)
 
-    const songs = data?.tracks?.hits?.map((song) => song.track)
+    let songs = data?.tracks?.hits?.map((song) => song.track)
+
+    songs = songs.filter((song) => song.images)
 
     if(isFetching)
         return <Loader text={`Searching ${searchSongName}`}/>
