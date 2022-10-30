@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#2e4a30]">
+      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#2e4a37]">
         <img src={logo} alt="logo" className="w-full h-18 object-contain"/>
         <NavLinks/>
       </div>
@@ -25,7 +25,7 @@ const Sidebar = () => {
         }
       </div>
 
-      <div className={`md:hidden absolute top-0 h-screen w-2/3 p-6 z-10 smooth-transition backdrop-blur-lg bg-gradient-to-tl from-white/10 to-[#483d8b] ${mobileMenuOpen ? 'left-0' : '-left-full'}`}>
+      <div className={`md:hidden absolute top-0 h-screen w-2/3 p-6 z-10 smooth-transition backdrop-blur-lg bg-gradient-to-tl from-white/10 to-[#3d8b65] ${mobileMenuOpen ? 'left-0' : '-left-full'}`}>
         <img src={logo} alt="logo" className="w-full h-14 object-contain"/>
         <NavLinks handleClick={() => setMobileMenuOpen(false)}/>
       </div>
