@@ -3,7 +3,7 @@ import PlayPause from "./PlayPause"
 
 const TopChartCard = ({song,i,isPlaying,activeSong,handlePauseClick,handlePlayClick}) => {
   return (
-    <div className="flex w-full items-center rounded-lg cursor-pointer mb-2 py-2 p-4 hover:bg-[#4c426e]">
+    <div className="flex w-full items-center rounded-lg cursor-pointer mb-2 py-2 p-4 hover:bg-[#426e4b]">
         <h3 className="font-bold text-white text-base mr-3">{i+1}.</h3>
         <div className="flex flex-1 justify-between items-center">
           <img src={song?.images.coverart} alt="song cover img" className="w-20 h-20 rounded-lg"/>
