@@ -13,6 +13,8 @@ const AroundYou = () => {
 
     const { data, isFetching, error } = useGetSongsByCountryQuery(country)
 
+    const songData = data?.filter(song => song.images)
+
     useEffect(() => {
         const fetchCountry = async() => {
             try {
@@ -45,14 +47,14 @@ const AroundYou = () => {
 
             <div className='flex flex-wrap sm:justify-start justify-center gap-8'>
                 {
-                    data?.map((song,i) => (
+                    songData?.map((song,i) => (
                         <SongCard
                             key={song.key}
                             i={i}
                             song={song}
                             isPlaying={isPlaying}
                             activeSong={activeSong}
-                            data={data}
+                            data={songData}
                         />
                     ))
                 }
