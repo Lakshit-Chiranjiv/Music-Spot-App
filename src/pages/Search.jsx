@@ -13,7 +13,7 @@ const Search = () => {
 
     let songs = data?.tracks?.hits?.map((song) => song.track)
 
-    songs = songs.filter((song) => song.images)
+    songs = songs?.filter((song) => song.images)
 
     if(isFetching)
         return <Loader text={`Searching ${searchSongName}`}/>
